@@ -7,14 +7,14 @@ reg[31:0] a2,a1,a0,b2,b1,b0;
 lpf filter(clk,data,out,b0,b1,b2,a0,a1,a2);
 initial begin
 	clk = 0;
-	a0 = 1;//4294967196;
+	a0 = 100;//4294967196;
 	a1 = -74;//74;
 	a2 = 27;//4294967269;
 	b0 = 13;
 	b1 = 26;
 	b2 = 13;
 	#10
-	forever #10 clk=~clk;
+	forever #5 clk=~clk;
 end
 
 
