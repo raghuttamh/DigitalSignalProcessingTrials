@@ -1,8 +1,13 @@
 ## Designing, Implementing and Verifying IIR Filter
-<b>Tools used:</b> Python and Verilog<br><br>
-<b>Problem:</b> <p>Desiging an IIR LOWPASS Butterworth filter, at any desired $\omega$ and implementing it using a Verilog program. Running a simulation and cross-checking the result with the one simulated in Python.</p><br>
-<b>Background:</b><p>Desiging a IIR filter is a lengthy and Time consuming process. Thanks to latest tools like MATLAB and Python (Scipy), It has become easy as the strenuous calculations are done by the computers. Once the calculations are done, the frequecy response, as well as simulations can be done in the same language to know how the calculated coefficients perform.</p>
-<p>If, this filter is to be implemented on hardware such as FPGA, one should go about writing the made design, using a Hardware Description Language such as VHDL or Verilog. What I have done here is, designing a LPF butterworth filter using Python and simulate to see how it works using some arbitrary inputs. Once this is done, I implement it using Verilog (behavioural style) and write a test bench to simulate it with the same arbitrary inputs and compare both the output signals.</p>
+**Tools used:** Python and Verilog
+
+**Problem:**
+    Desiging an IIR LOWPASS Butterworth filter, at any desired $\omega$ and implementing it using a Verilog program. Running a simulation and cross-checking the result with the one simulated in Python.
+    
+**Background:**
+    Desiging a IIR filter is a lengthy and Time consuming process. Thanks to latest tools like MATLAB and Python (Scipy), It has become easy as the strenuous calculations are done by the computers. Once the calculations are done, the frequecy response, as well as simulations can be done in the same language to know how the calculated coefficients perform.
+    
+If, this filter is to be implemented on hardware such as FPGA, one should go about writing the made design, using a Hardware Description Language such as VHDL or Verilog. What I have done here is, designing a LPF butterworth filter using Python and simulate to see how it works using some arbitrary inputs. Once this is done, I implement it using Verilog (behavioural style) and write a test bench to simulate it with the same arbitrary inputs and compare both the output signals.
 
 
 ```python
@@ -30,7 +35,7 @@ plt.show()
 
 
     
-![png](output_3_0.png)
+![frequency response](output_3_0.png)
     
 
 
@@ -77,7 +82,7 @@ plt.show()
 
 
     
-![png](output_8_0.png)
+![expected](output_8_0.png)
     
 
 
@@ -98,11 +103,12 @@ plt.show()
 
 
     
-![png](output_10_0.png)
+![observed](output_10_0.png)
     
 
 
-<b>Conclusion:</b><br>The impemented filter works as expected but is not ideal due to many conditions, which are to be considered <br>
+**Conclusion:**
+The impemented filter works as expected but is not ideal due to many conditions, which are to be considered 
 - The Maximum gain of the filter is not Unity
 - The observed waveform do not match the ideal. This is possibly because of using Fixed-point Arithmetic for calculation, which involves truncation of the bits in order to make the calculation simple for the processor.
 - Rounding off errors
